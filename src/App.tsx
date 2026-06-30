@@ -1,6 +1,6 @@
 // import A from "./A"
 
-import { useState } from "react"
+import { useState, type FormEvent } from "react"
 
 // function App(){
 //   // const x:string[] =  ["hello", "world"]
@@ -33,21 +33,44 @@ import { useState } from "react"
 // }
 // export default App
 
+// function App(){
+//   const [username, setuname] = useState<string>("")
+//   // const [field, setfield] = useState<string>("")
+//   // const [arr, setArr] = useState([1,2,3])
+//   // const [obj, setObj] = useState({name:"pari", age:9})
+//   const fun = (event:React.ChangeEvent<HTMLInputElement>)=>{
+//     setuname(event.target.value)
+//     console.log(username)
+//   }
+//   return(
+//     <div>
+//       <input type="text" placeholder="Enter name" value={username} onChange={fun}/>
+//       {/* <button onClick={()=>{handleSubmit}}>submit</button> */}
+//       {/* <button onClick={()=>setuname("xyz")}>click</button> */}
+//       <p>{username}</p>
+//       {/* {arr.map((element)=>{
+//         return(
+//           <p>{element}</p>
+//         )
+//       })} */}
+//       {/* <p>{obj.name}</p>
+//        <p>{obj.age}</p> */}
+//     </div>
+//   )
+// }
+// export default App
+
+
+//event handling
 function App(){
-  const [username, setuname] = useState("abc")
-  const [arr, setArr] = useState([1,2,3])
-  const [obj, setObj] = useState({name:"pari", age:9})
+  const[color, setColor] = useState("red")
+  const funClicked=()=>{
+    setColor("blue")
+  }
   return(
     <div>
-      <p>{username}</p>
-      <button onClick={()=>setuname("xyz")}>click</button>
-      {arr.map((element)=>{
-        return(
-          <p>{element}</p>
-        )
-      })}
-      <p>{obj.name}</p>
-       <p>{obj.age}</p>
+      <button onDoubleClick={funClicked}>click</button>
+      <p>{color}</p>
     </div>
   )
 }
