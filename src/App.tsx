@@ -62,27 +62,49 @@ import { useState, type FormEvent } from "react"
 
 
 //event handling
+// function App(){
+//   const[color, setColor] = useState("red")
+//   const funClicked=()=>{
+//     setColor("blue")
+//     console.log(color)
+//   }
+//   const funMouseMove=()=>{
+//     setColor("purple")
+//     console.log(color)
+//   }
+//    const funMouseDown=()=>{
+//     setColor("black")
+//     console.log(color)
+//   }
+//   return(
+//     <div>
+//       <button onMouseOut={funClicked}>click</button>
+//       <button onMouseUp={funMouseMove}>click</button>
+//       <button onMouseDown={funMouseDown}>click</button>
+//       <p>{color}</p>
+//     </div>
+//   )
+// }
+// export default App
+
+//product page
 function App(){
-  const[color, setColor] = useState("red")
-  const funClicked=()=>{
-    setColor("blue")
-    console.log(color)
-  }
-  const funMouseMove=()=>{
-    setColor("purple")
-    console.log(color)
-  }
-   const funMouseDown=()=>{
-    setColor("black")
-    console.log(color)
-  }
+  // const[data, setData] = useState([])
+  const[data, setData] = useState([{ProductName:"Mobile", price:9000}, {ProductName:"Laptop", price:20000}, {ProductName:"Tab", price:9000}, {ProductName:"Mouse", price:1000}])
   return(
-    <div>
-      <button onMouseOut={funClicked}>click</button>
-      <button onMouseUp={funMouseMove}>click</button>
-      <button onMouseDown={funMouseDown}>click</button>
-      <p>{color}</p>
-    </div>
-  )
-}
+  <div>
+    {data.length==0?"No products found":<div>
+    {data.map((element, index)=>{
+      return(
+        <div key = {index}>
+          <p>{element.ProductName}</p>
+          <p>{element.price}</p>
+        </div>
+      )
+    })}</div>
+    }
+  </div>
+ )
+ }
+ 
 export default App
