@@ -66,10 +66,21 @@ function App(){
   const[color, setColor] = useState("red")
   const funClicked=()=>{
     setColor("blue")
+    console.log(color)
+  }
+  const funMouseMove=()=>{
+    setColor("purple")
+    console.log(color)
+  }
+   const funMouseDown=()=>{
+    setColor("black")
+    console.log(color)
   }
   return(
     <div>
-      <button onDoubleClick={funClicked}>click</button>
+      <button onMouseOut={funClicked}>click</button>
+      <button onMouseUp={funMouseMove}>click</button>
+      <button onMouseDown={funMouseDown}>click</button>
       <p>{color}</p>
     </div>
   )
