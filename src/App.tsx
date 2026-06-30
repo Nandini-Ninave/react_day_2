@@ -88,23 +88,70 @@ import { useState, type FormEvent } from "react"
 // export default App
 
 //product page
-function App(){
-  // const[data, setData] = useState([])
-  const[data, setData] = useState([{ProductName:"Mobile", price:9000}, {ProductName:"Laptop", price:20000}, {ProductName:"Tab", price:9000}, {ProductName:"Mouse", price:1000}])
-  return(
-  <div>
-    {data.length==0?"No products found":<div>
-    {data.map((element, index)=>{
-      return(
-        <div key = {index}>
-          <p>{element.ProductName}</p>
-          <p>{element.price}</p>
-        </div>
-      )
-    })}</div>
-    }
-  </div>
- )
- }
+// function App(){
+//   // const[data, setData] = useState([])
+//   const[data, setData] = useState([{ProductName:"Mobile", price:9000}, {ProductName:"Laptop", price:20000}, {ProductName:"Tab", price:9000}, {ProductName:"Mouse", price:1000}])
+//   return(
+//   <div>
+//     {data.length==0?"No products found":<div>
+//     {data.map((element, index)=>{
+//       return(
+//         <div key = {index}>
+//           <p>{element.ProductName}</p>
+//           <p>{element.price}</p>
+//         </div>
+//       )
+//     })}</div>
+//     }
+//   </div>
+//  )
+//  }
  
+// export default App
+
+
+
+// function App(){
+//   const[data, setData] = useState("")
+//   const fun=(childdata:string)=>{
+//     setData(childdata)
+//   }
+//   return(
+//     <div>
+//       <Child fun={fun}></Child>
+//       <p>passed from child component: {data}</p>
+//     </div>
+//   )
+// }
+// function Child({fun}){
+//   const[childdata, setChildData] = useState<string>("")
+//   return(
+//     <div>
+//       <input type="text" placeholder="Type Something..." value={childdata} onChange={(e)=>setChildData(e.target.value)}></input>
+      
+//       <button type="submit">click</button>
+      
+//     </div>
+//   )
+// }
+// export default App
+
+
+//counter
+function App(){
+  const[number, setNumber] = useState(0)
+  const inc=()=>{
+    setNumber(prev=>prev+1)
+  }
+  const reset=()=>{
+    setNumber(0)
+  }
+  return(
+    <div>
+      {number}
+      <button onClick={inc}>increase</button>
+      <button onClick={reset}>reset</button>
+    </div>
+  )
+}
 export default App
