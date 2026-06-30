@@ -9,7 +9,6 @@
 // }
 // export default A
 
-
 // function A(props:{obj:{name:string, age:number}}){
 //     // console.log(props.obj.name)
 //     const{obj:{name}, obj:{age}}=props
@@ -26,7 +25,7 @@
 // }
 // export default A
 
-function A(props:{children:React.ReactElement}){
+function A(props:{children:React.ReactNode}){
     return(<div>
         {/* <p>{children}</p> */}
         <p>{props.children}</p>
