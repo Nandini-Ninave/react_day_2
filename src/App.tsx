@@ -35,10 +35,19 @@ import { useState } from "react"
 
 function App(){
   const [username, setuname] = useState("abc")
+  const [arr, setArr] = useState([1,2,3])
+  const [obj, setObj] = useState({name:"pari", age:9})
   return(
     <div>
       <p>{username}</p>
-      <button onClick={()=>setuname("xyz")}></button>
+      <button onClick={()=>setuname("xyz")}>click</button>
+      {arr.map((element)=>{
+        return(
+          <p>{element}</p>
+        )
+      })}
+      <p>{obj.name}</p>
+       <p>{obj.age}</p>
     </div>
   )
 }
