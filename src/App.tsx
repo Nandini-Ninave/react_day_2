@@ -27,7 +27,6 @@ function App(){
     return <p>less than 10</p>
     } */}
     {/* {num>=5?<p>{num}</p>:<p>{num} Less than 5</p>} */}
-    {num>=5 && <p>{num}</p>}
   </div>)
 }
 export default App
